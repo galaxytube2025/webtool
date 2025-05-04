@@ -1,0 +1,17 @@
+function Timeline({ clips }) {
+  return (
+    <div className="timeline">
+      {clips.map((clip, index) => (
+        <div 
+          key={index}
+          className="clip"
+          style={{ width: `${clip.duration * 100}px` }}
+        >
+          <div className="trim-handle left" />
+          <div className="clip-content">{clip.name}</div>
+          <div className="trim-handle right" />
+        </div>
+      ))}
+    </div>
+  );
+}
