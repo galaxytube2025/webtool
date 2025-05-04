@@ -1,0 +1,14 @@
+// Add text watermark
+await ffmpeg.run(
+  '-i', 'input.mp4',
+  '-vf', "drawtext=text='My Watermark':x=10:y=10:fontsize=24:fontcolor=white",
+  'output.mp4'
+);
+
+// Convert format
+await ffmpeg.run(
+  '-i', 'input.mp4',
+  '-c:v', 'libx264',
+  '-crf', '23',
+  'output.mp4'
+);
